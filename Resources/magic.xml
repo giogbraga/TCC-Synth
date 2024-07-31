@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<magic>
+  <Styles>
+    <Style name="default">
+      <Nodes/>
+      <Classes>
+        <plot-view border="2" background-color="black" border-color="silver" display="contents"/>
+        <nomargin margin="0" padding="0" border="0"/>
+        <group margin="5" padding="5" border="2" flex-direction="column"/>
+        <transparent background-color="transparentblack"/>
+      </Classes>
+      <Types>
+        <Slider border="0" slider-textbox="textbox-below"/>
+        <ToggleButton border="0" max-height="50" caption-size="0" text="Active"/>
+        <TextButton border="0" max-height="50" caption-size="0"/>
+        <ComboBox border="0" max-height="50" caption-size="0"/>
+        <Plot border="0" margin="0" padding="0" background-color="00000000"
+              radius="0"/>
+        <XYDragComponent border="0" margin="0" padding="0" background-color="00000000"
+                         radius="0"/>
+      </Types>
+      <Palettes>
+        <default/>
+      </Palettes>
+    </Style>
+  </Styles>
+  <View id="root" resizable="1" resize-corner="1">
+    <View pos-x="9.43161%" pos-y="69.6262%" pos-width="50.0312%" pos-height="100%"
+          display="flexbox" flex-direction="column">
+      <View height="100" display="flexbox" flex-direction="row">
+        <View height="250" caption="Filter" caption-size="35" border="" width="100"
+              min-width="100" min-height="250" margin="0">
+          <ComboBox caption="Filter Type" parameter="FILTERTYPE" combo-button=""
+                    combo-text="" height="65" pos-x="-3.82653%" pos-y="-27.027%"
+                    pos-width="33.1633%" pos-height="37.8378%" width=""/>
+          <Slider caption="Filter Cutoff" parameter="FILTERCUTOFF" slider-type="rotary-horizontal-vertical"/>
+          <Slider caption="Filter Resonance" parameter="FILTERRES" slider-type="rotary-horizontal-vertical"/>
+        </View>
+        <View caption="Oscilator" height="250" caption-size="35" width="100"
+              margin="" border="">
+          <ComboBox parameter="OSC1WAVETYPE" caption="Wave Type" caption-placement=""
+                    lookAndFeel="FoleysFinest" image-placement="centred" height="65"/>
+          <Slider caption="Attack" parameter="ATTACK"/>
+          <Slider caption="Decay" parameter="DECAY"/>
+          <Slider caption="Sustain" parameter="SUSTAIN"/>
+          <Slider caption="Release" parameter="RELEASE"/>
+        </View>
+        <View caption="FM" height="250" caption-size="35" accessibility="0">
+          <Slider caption="FM Frequency" parameter="OSC1FMFREQ" slider-type="rotary-horizontal-vertical"/>
+          <Slider caption="FM Depth" parameter="OSC1FMDEPTH" slider-type="rotary-horizontal-vertical"/>
+        </View>
+        <View class="parameters nomargin" caption="Filter Mod" height="250"
+              caption-size="35">
+          <Slider caption="Filter Attack" parameter="FILTERATTACK"/>
+          <Slider caption="Filter Decay" parameter="FILTERDECAY"/>
+          <Slider caption="Filter Sustain" parameter="FILTERSUSTAIN"/>
+          <Slider caption="Filter Release" parameter="FILTERRELEASE"/>
+        </View>
+        <View display="tabbed">
+          <Plot source="analyser" caption="Analizer" background-image="Logo_UFMG_png"/>
+          <Plot caption="Oscilloscope" background-image="Logo_UFMG_png" source="waveform"/>
+          <Meter caption="Meter" source="output"/>
+        </View>
+      </View>
+      <KeyboardComponent/>
+    </View>
+  </View>
+</magic>
